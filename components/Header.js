@@ -51,11 +51,11 @@ const Header = () => {
 
   return (
     <div
-      className=" sticky top-0 z-10 grid grid-cols-3 bg-white shadow p-5 
+      className=" sticky top-0 z-10 grid grid-cols-3 bg-white shadow p-2 
     md:px-20"
     >
       <div
-        className="relative flex items-center h-8 cursor-pointer my-auto "
+        className="relative flex items-center h-4 md:h-8 cursor-pointer my-auto "
         onClick={() => router.push("/")}
       >
         <Image
@@ -66,26 +66,26 @@ const Header = () => {
         />
       </div>
 
-      <div className="flex items-center  border-2 rounded-full  py-1 md:shadow-sm">
+      <div className="flex items-center  border-2 rounded-full  md:py-2  md:shadow-sm">
         <input
-          className="pl-5 text-gray-600 text-sm  outline-none md:flex-grow bg-transparent"
+          className="pl-5 placeholder-shown:text-xs md:placeholder-shown:text-sm  text-gray-600 lg:text-sm  outline-none md:flex-grow bg-transparent"
           type="text"
           placeholder="Search Your Location"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <SearchIcon className=" hidden md:inline-flex h-8 cursor-pointer  bg-red-400 p-2 md:mx-2 text-white rounded-full " />
+        <SearchIcon className=" hidden md:inline-flex  h-8 cursor-pointer  bg-red-400 p-2 md:mx-2 text-white rounded-full " />
       </div>
       <div className="flex items-center  space-x-4 justify-end">
         <p className="hidden md:inline-flex cursor-pointer">Become a Host</p>
-        <GlobeAltIcon className="h-5 font-extralight " />
+        <GlobeAltIcon className="h-4 md:h-5 font-extralight " />
         <div className="flex text-gray-500 items-center   border-2 rounded-full p-1 ">
-          <MenuIcon className="h-5 cursor-pointer text-gray-800 px-2" />
-          <UserCircleIcon className="h-8 cursor-pointer" />
+          <MenuIcon className="h-2 md:h-5 cursor-pointer text-gray-800 px-2" />
+          <UserCircleIcon className="h-5 md:h-8 cursor-pointer" />
         </div>
       </div>
       {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto mt-5">
+        <div className="flex flex-col col-span-3 w-auto h-screen mx-auto mt-5">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
